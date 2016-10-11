@@ -19,6 +19,8 @@
   "license": "MIT",
   "dependencies": {
     "autocannon": "^0.14.1",
+    "benchmark": "^2.1.1",
+    "microtime": "^2.1.1",
     "restify": "^4.0.3"
   },
   "devDependencies": {
