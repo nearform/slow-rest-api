@@ -20,6 +20,8 @@ Part of the workshop __Optimizing Node.js applications with 0x and autocannon__
 4. In another terminal, as soon as possible: `npm test`
 5. CTRL-C the `0x` process.
 
+A sample flamegraph is included in `flamegraph.html`.
+
 ## License
 
 MIT
