@@ -22,12 +22,11 @@ Part of the workshop __Optimizing Node.js applications with 0x and autocannon__
 
 A sample flamegraph is included in `flamegraph.html`.
 
-## V8 killers
+## V8 microbenchmarks
 
-The v8-killers folder contains some examples of V8 killers.
+The v8-microbenchmarks folder contains some examples of V8 killers.
 
-Starting from the files in v8-killes/start, transform them using
-[benchmark](http://npm.im/benchmark) and solve the performance issue.
+Run them and be surprised!
 
 ## License
 
