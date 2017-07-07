@@ -1,7 +1,8 @@
+'use strict'
+
 var crypto = require('crypto')
 
 var etagCache = require('./etag-cache.json')
-var k
 
 module.exports = etag
 
@@ -23,11 +24,11 @@ function etag (entity, opts) {
     match = (etagCache[k].algorithm === opts.algorithm &&
       etagCache[k].encoding === opts.encoding &&
       etagCache[k].output === opts.output &&
-      entity === Buffer(etagCache[k].content.data).toString()) &&
+      entity === Buffer.from(etagCache[k].content.data).toString()) &&
       k
   })
 
-  if (match) { return k }
+  if (match) { return match }
 
   var hash
 
