@@ -3,7 +3,7 @@
 var etag = require('./etag')
 var pkg = JSON.stringify(require('./package.json'))
 
-var statsToElastic = require('./utils/stats-to-elasticsearch')
+var statsToElastic = require('@nearform/stats-to-elasticsearch')
 statsToElastic({host: "elasticsearch:9200"}, {tags: ['slow-rest-api']}).start()
 
 var restify = require('restify')
