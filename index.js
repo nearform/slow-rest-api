@@ -4,7 +4,7 @@ var etag = require('./etag')
 var pkg = JSON.stringify(require('./package.json'))
 
 var statsToElastic = require('@nearform/stats-to-elasticsearch')
-statsToElastic({host: "elasticsearch:9200"}, {tags: ['slow-rest-api']}).start()
+statsToElastic({elasticsearchConfig: {host: "elasticsearch:9200"}, statsConfig: {tags: ['slow-rest-api']}}).start()
 
 var restify = require('restify')
 var server = restify.createServer()
