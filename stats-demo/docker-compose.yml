@@ -19,10 +19,6 @@ services:
       - "3000:3000"
     depends_on:
       - elasticsearch
-    command: >
-        sh -c '
-        sleep 60;
-        npm run start;'
   slow-rest-api-2:
     build: ../
     environment:
@@ -31,7 +27,3 @@ services:
       - "3001:3001"
     depends_on:
       - elasticsearch
-    command: >
-        sh -c '
-        sleep 60;
-        npm run start;'
