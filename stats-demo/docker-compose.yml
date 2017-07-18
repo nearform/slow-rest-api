@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  elasticsearch:
+    image: elasticsearch:5
+    command: elasticsearch -E network.host=0.0.0.0 -E discovery.zen.minimum_master_nodes=1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+  kibana:
+    image: kibana:5
+    ports:
+      - "5601:5601"
+  slow-rest-api-1:
+    build: ../
+    environment:
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - elasticsearch
+    command: >
+        sh -c '
+        sleep 60;
+        npm run start;'
+  slow-rest-api-2:
+    build: ../
+    environment:
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    depends_on:
+      - elasticsearch
+    command: >
+        sh -c '
+        sleep 60;
+        npm run start;'
