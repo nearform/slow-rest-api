@@ -3,6 +3,9 @@
 var etag = require('./etag')
 var pkg = JSON.stringify(require('./package.json'))
 
+var statsToElastic = require('./utils/stats-to-elasticsearch')
+statsToElastic({host: "elasticsearch:9200"}, {tags: ['slow-rest-api']}).start()
+
 var restify = require('restify')
 var server = restify.createServer()
 var count = 1
@@ -40,7 +43,7 @@ server.get('/c', function (req, res, next) {
   return next()
 })
 
-server.listen(3000)
+server.listen(process.env.PORT || 3000)
 
 var signal = 'SIGINT'
 
