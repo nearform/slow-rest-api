@@ -18,15 +18,12 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@nearform/stats-to-elasticsearch": "0.0.0",
     "autocannon": "^0.16.5",
     "benchmark": "^2.1.1",
-    "elasticsearch": "^13.2.0",
-    "gc-profiler": "^1.4.0",
-    "hyperid": "^1.2.0",
     "lodash": "^4.17.4",
     "loopbench": "^1.2.0",
     "microtime": "^2.1.1",
-    "reinterval": "^1.1.0",
     "restify": "^5.0.0"
   },
   "devDependencies": {
