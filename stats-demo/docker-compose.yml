@@ -1,6 +1,8 @@
 version: "2"
 
 services:
+  # If issue with es try
+  # sudo sysctl -w vm.max_map_count=262144
   elasticsearch:
     image: elasticsearch:5
     command: elasticsearch -E network.host=0.0.0.0 -E discovery.zen.minimum_master_nodes=1
