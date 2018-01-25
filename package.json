@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "test": "autocannon -d 20 -c 100 http://localhost:3000/a & autocannon -d 20 -c 100 http://localhost:3000/b & autocannon -d 20 -c 100 http://localhost:3000/c",
+    "test": "./scripts/test.sh",
     "mk-static": "mkdir -p static && cd static && (dd if=/dev/random bs=1 count=10000 | split -a 4 -b 4)",
     "mk-cache-json": "node -p \"JSON.stringify(require('fs').readdirSync('./static').reduce((o, f) => { f = require('fs').readFileSync('./static/' + f); o[require('./etag-fixed')(f)] = {algorithm: 'md5', encoding: 'utf8', output: 'base64', content: f}; return o  }, {}), 0, 2)\" > etag-cache.json",
     "rm-static": "rm -fr static",
@@ -18,9 +18,9 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "autocannon": "^0.16.5",
     "benchmark": "^2.1.1",
     "microtime": "^2.1.1",
-    "autocannon": "^0.16.5",
     "restify": "^5.0.0"
   },
   "devDependencies": {
