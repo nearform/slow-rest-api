@@ -2,7 +2,7 @@
 
 A REST API that is slow.
 
-Part of the workshop __Optimizing Node.js applications with 0x and autocannon__
+Part of the __The Node.js Performance Workshop__.
 
 ## Steps
 
