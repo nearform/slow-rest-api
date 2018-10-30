@@ -19,7 +19,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "autocannon": "^2.0.0",
+    "autocannon": "^3.1.0",
     "benchmark": "^2.1.1",
     "microtime": "^2.1.1",
     "restify": "^5.0.0"

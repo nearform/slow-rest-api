@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-DURATION=20
+exec 3< <(autocannon -d 20 -c 100 http://localhost:3000/a 2>&1)
+exec 4< <(autocannon -d 20 -c 100 http://localhost:3000/b 2>&1)
+exec 5< <(autocannon -d 20 -c 100 http://localhost:3000/c 2>&1)
 
-trap 'kill %1; kill %2; kill %3' SIGINT;
-
-autocannon -d "$DURATION" -c 100 http://localhost:3000/a &
-autocannon -d "$DURATION" -c 100 http://localhost:3000/b &
-autocannon -d "$DURATION" -c 100 http://localhost:3000/c &
-sleep "$DURATION"
-exit 0
+cat <&3
+echo
+cat <&4
+echo
+cat <&5
