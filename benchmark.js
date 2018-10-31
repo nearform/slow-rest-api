@@ -1,3 +1,5 @@
+'use strict'
+
 const autocannon = require('autocannon')
 const { PassThrough } = require('stream')
 
