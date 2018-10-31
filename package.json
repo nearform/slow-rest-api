@@ -24,7 +24,6 @@
     "restify": "^5.0.0"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1",
     "standard": "^10.0.2"
   }
 }
