@@ -20,8 +20,8 @@
   "dependencies": {
     "autocannon": "^3.1.0",
     "benchmark": "^2.1.1",
-    "microtime": "^2.1.1",
-    "restify": "^5.0.0"
+    "microtime": "^3.0.0",
+    "restify": "^8.5.1"
   },
   "devDependencies": {
     "standard": "^10.0.2"
