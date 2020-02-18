@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
     "test": "node benchmark.js",
     "mk-static": "mkdir -p static && cd static && (dd if=/dev/random bs=1 count=10000 | split -a 4 -b 4)",
     "mk-cache-json": "node -p \"JSON.stringify(require('fs').readdirSync('./static').reduce((o, f) => { f = require('fs').readFileSync('./static/' + f); o[require('./etag-fixed')(f)] = {algorithm: 'md5', encoding: 'utf8', output: 'base64', content: f}; return o  }, {}), 0, 2)\" > etag-cache.json",
@@ -13,14 +12,9 @@
     "lint": "standard"
   },
   "author": "David Mark Clements",
-  "contributors": [
-    "Matteo Collina <matteo.collina@gmail.com>"
-  ],
   "license": "MIT",
   "dependencies": {
-    "autocannon": "^3.1.0",
-    "benchmark": "^2.1.1",
-    "microtime": "^3.0.0",
+    "autocannon": "^4.6.0",
     "restify": "^8.5.1"
   },
   "devDependencies": {
