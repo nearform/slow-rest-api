@@ -40,3 +40,5 @@ profile*
 .DS_Store
 *clinic-doctor*
 *clinic-flame*
+!clinic-doctor.html
+!clinic-flame.html
