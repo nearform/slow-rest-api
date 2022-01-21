@@ -5,7 +5,6 @@ const pkg = JSON.stringify(require('./package.json'))
 
 const restify = require('restify')
 const server = restify.createServer()
-let count = 1
 
 function payload () {
   const data = {
@@ -30,7 +29,7 @@ function payload () {
 }
 
 server.get('/a', function a (req, res, next) {
-  const tag = etag(pkg + ++count)
+  const tag = etag({ entity: pkg, algorithm: 'md5' })
 
   if (!(tag instanceof Error)) {
     res.setHeader('ETag', tag)
@@ -41,7 +40,7 @@ server.get('/a', function a (req, res, next) {
 })
 
 server.get('/b', function b (req, res, next) {
-  const tag = etag({entity: pkg + ++count, algorithm: 'sha256'})
+  const tag = etag({ entity: pkg, algorithm: 'sha256' })
 
   if (!(tag instanceof Error)) {
     res.setHeader('ETag', tag)
@@ -52,7 +51,7 @@ server.get('/b', function b (req, res, next) {
 })
 
 server.get('/c', function c (req, res, next) {
-  const tag = etag(pkg + ++count, {algorithm: 'sha512WithRsaEncryption'})
+  const tag = etag({ entity: pkg, algorithm: 'sha512WithRsaEncryption' })
 
   if (!(tag instanceof Error)) {
     res.setHeader('ETag', tag)
