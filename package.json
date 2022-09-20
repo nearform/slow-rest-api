@@ -6,7 +6,6 @@
   "scripts": {
     "test": "node benchmark.js",
     "mk-static": "mkdir -p static && cd static && (dd if=/dev/random bs=1 count=10000 | split -a 4 -b 4)",
-    "mk-cache-json": "node -p \"JSON.stringify(require('fs').readdirSync('./static').reduce((o, f) => { f = require('fs').readFileSync('./static/' + f); o[require('./etag-fixed')(f)] = {algorithm: 'md5', encoding: 'utf8', output: 'base64', content: f}; return o  }, {}), 0, 2)\" > etag-cache.json",
     "rm-static": "rm -fr static",
     "mk-cache": "npm run mk-static && npm run mk-cache-json && npm run rm-static",
     "lint": "standard"
