@@ -17,6 +17,6 @@
     "restify": "^8.5.1"
   },
   "devDependencies": {
-    "standard": "^10.0.2"
+    "standard": "^17.0.0"
   }
 }
